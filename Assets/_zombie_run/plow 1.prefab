@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2684686087163169511}
   m_Layer: 0
   m_Name: plow 1
-  m_TagString: Enemy
+  m_TagString: DodgeEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,6 +100,10 @@ PrefabInstance:
     - target: {fileID: 140824156826314600, guid: ee4d353a19f2da74ba9d7ad0184d6a08, type: 3}
       propertyPath: m_Name
       value: Plow
+      objectReference: {fileID: 0}
+    - target: {fileID: 140824156826314600, guid: ee4d353a19f2da74ba9d7ad0184d6a08, type: 3}
+      propertyPath: m_TagString
+      value: DodgeEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 4260012184295328087, guid: ee4d353a19f2da74ba9d7ad0184d6a08, type: 3}
       propertyPath: m_RootOrder

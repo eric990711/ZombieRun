@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -6351320649179262504}
   m_Layer: 0
   m_Name: cross
-  m_TagString: Enemy
+  m_TagString: Black
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,8 +94,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.45581734, y: 2.0439036, z: 1.2915931}
-  m_Center: {x: 0.00032372028, y: 0.23746955, z: 0.0007775426}
+  m_Size: {x: 1.6530296, y: 2.5274284, z: 1.8695307}
+  m_Center: {x: -0.033108752, y: 1.2114036, z: -0.0024906793}
 --- !u!54 &-6351320649179262504
 Rigidbody:
   m_ObjectHideFlags: 0
