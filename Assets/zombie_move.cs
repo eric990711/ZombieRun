@@ -6,21 +6,31 @@ public class zombie_move : MonoBehaviour
 {
     public float speed;
     public GameObject Player;
+    public GameObject ZombieBite;
     public bool isClick,isAttack;
+    public bool isMoving;
     Vector3 targetL = new Vector3(0, 0, -1.5f);
     Vector3 targetB = new Vector3(0, 0, 0);
     Vector3 targetR = new Vector3(0, 0, 1.5f);
     Vector3 velo = Vector3.zero;
     void Start()
     {
-        //transform.position = new Vector3(0, 0, 0);
-        GetComponent<Animator>().SetTrigger("Run");
+       
     }
     
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.instance.isGameover == false)
+        if (isMoving == false)
+        {
+            if (GameManager.instance.isGameStarted == true)
+            {
+                isMoving = true;
+                GetStarted();
+            }
+        }
+
+        if (GameManager.instance.isGameover == false && GameManager.instance.isGameStarted == true)
         {
             //if (Input.GetKey(KeyCode.LeftArrow))
             //{
@@ -60,7 +70,7 @@ public class zombie_move : MonoBehaviour
             }
             else if (Input.GetKeyUp(KeyCode.Space))
             {
-                Attack_off();
+                Attack_off();           
             }
             //if (Input.GetKey(KeyCode.Space) || isAttack == true)
             //{
@@ -73,17 +83,23 @@ public class zombie_move : MonoBehaviour
                 isAttack = false;
 
             }
+            transform.localPosition = Vector3.zero;
         }
     }
-
+    public void GetStarted()
+    {
+        if (GameManager.instance.isGameStarted == true)
+            GetComponent<Animator>().SetTrigger("Run");
+    }
     public void Attack()
     {
-        if (isClick == false && GameManager.instance.isGameover == false)
+        if (isClick == false && GameManager.instance.isGameover == false && GameManager.instance.isGameStarted == true)
         {
             StartCoroutine(Playerattack());
             isClick = true;
             isAttack = true;
             GetComponent<Animator>().SetTrigger("Attack");
+            GameObject go = Instantiate(ZombieBite);
         }
 
     }

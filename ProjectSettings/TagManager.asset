@@ -6,6 +6,13 @@ TagManager:
   tags:
   - Enemy
   - Attack
+  - DodgeEnemy
+  - Trap
+  - Bonus
+  - Goal
+  - HpPack
+  - Pumpkin
+  - Black
   layers:
   - Default
   - TransparentFX

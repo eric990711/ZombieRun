@@ -13,11 +13,14 @@ public class Movement : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {   
-        if(GameManager.instance.isGameover == false)
-            transform.Translate(Vector3.left * Time.deltaTime * speed);
+    {   if(GameManager.instance.isGameStarted == true)
+        {
+            if (GameManager.instance.isGameover == false)
+                transform.Translate(Vector3.left * Time.deltaTime * speed);
 
-        if (gameObject.transform.position.x <= -20)
-            Destroy(gameObject);
+            if (gameObject.transform.position.x <= -20)
+                Destroy(gameObject);
+        }
     }
+
 }
