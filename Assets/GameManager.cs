@@ -74,8 +74,21 @@ public class GameManager : MonoBehaviour
 
     public void Gameover()
     {
+        // 광고 매니저가 있으면 광고 먼저 표시 → 광고 종료 후 ShowTryAgain() 호출
+        // 광고 매니저가 없으면 바로 패널 표시
+        if (AdManager.instance != null)
+        {
+            AdManager.instance.ShowInterstitialAd();
+        }
+        else
+        {
+            ShowTryAgain();
+        }
+    }
+
+    public void ShowTryAgain()
+    {
         tryagain.SetActive(true);
-        //StartCoroutine(_Gameover());
     }
 
     public void ReStart()
