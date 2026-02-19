@@ -12,8 +12,7 @@ using UnityEngine.Advertisements;
 /// </summary>
 public class AdManager : MonoBehaviour, IUnityAdsListener
 {
-    // TODO: Unity Dashboard에서 받은 Android Game ID로 교체하세요
-    [SerializeField] string _androidGameId = "YOUR_UNITY_ADS_ANDROID_GAME_ID";
+    [SerializeField] string _androidGameId = "6049757";
 
     // 전면 광고 placement ID (Unity Ads 기본값)
     [SerializeField] string _placementId = "video";
