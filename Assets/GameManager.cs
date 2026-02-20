@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Diagnostics;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -93,7 +93,7 @@ public class GameManager : MonoBehaviour
 
     public void ReStart()
     {
-        Application.LoadLevel(0);
+        SceneManager.LoadScene(0);
     }
 
     IEnumerator _Gameover()
@@ -101,6 +101,6 @@ public class GameManager : MonoBehaviour
         createrosary.GetComponent<create_rosary>().starttime = 0;
         yield return new WaitForSeconds(5f);
         tryagain.SetActive(true);
-        Application.LoadLevel(0);
+        SceneManager.LoadScene(0);
     }
 }
