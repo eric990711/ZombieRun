@@ -66,12 +66,12 @@ public class AdManager : MonoBehaviour
 
     // ─── 이벤트 핸들러 ───────────────────────────────────────────────────
 
-    void OnInterstitialReady(IronSourceAdInfo adInfo)
+    void OnInterstitialReady(LevelPlayAdInfo adInfo)
     {
         // 광고 로드 완료 (별도 처리 불필요)
     }
 
-    void OnInterstitialLoadFailed(IronSourceError error)
+    void OnInterstitialLoadFailed(LevelPlayAdError error)
     {
         Debug.LogWarning("전면광고 로드 실패: " + error);
         // 광고 로드 실패 시 바로 게임오버 패널 표시
@@ -79,7 +79,7 @@ public class AdManager : MonoBehaviour
             GameManager.instance.ShowTryAgain();
     }
 
-    void OnInterstitialClosed(IronSourceAdInfo adInfo)
+    void OnInterstitialClosed(LevelPlayAdInfo adInfo)
     {
         // 광고 종료 → 게임오버 패널 표시 + 다음 광고 미리 로드
         if (GameManager.instance != null)
@@ -87,7 +87,7 @@ public class AdManager : MonoBehaviour
         IronSource.Agent.loadInterstitial();
     }
 
-    void OnInterstitialShowFailed(IronSourceError error, IronSourceAdInfo adInfo)
+    void OnInterstitialShowFailed(LevelPlayAdError error, LevelPlayAdInfo adInfo)
     {
         Debug.LogWarning("전면광고 표시 실패: " + error);
         // 광고 표시 실패 시 바로 게임오버 패널 표시
