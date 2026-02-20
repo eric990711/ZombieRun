@@ -1,4 +1,5 @@
 using UnityEngine;
+using Unity.Services.LevelPlay;
 
 /// <summary>
 /// LevelPlay (Ads Mediation) 광고 매니저 - 사망 후 전면 광고(Interstitial) 표시
