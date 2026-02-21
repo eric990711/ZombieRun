@@ -8,7 +8,7 @@ public class AdManager : MonoBehaviour,
 {
     [SerializeField] string _androidGameId = "6049757";
     [SerializeField] string _adUnitId = "Interstitial_Android";
-    [SerializeField] bool _testMode = true;
+    [SerializeField] bool _testMode = false;
 
     public static AdManager instance;
 
